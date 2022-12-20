@@ -63,7 +63,7 @@ After you're finished please remove all the comments and instructions!
 # 📖 OOP School Library <a name="about-project"></a>
 
 
-**OOP School Library** is a app alows you to keep track of all the records of books in a library and who borrows them.
+**OOP School Library** is a app that alows you to keep track of all the records of books in a library and who borrows them.
 
 ## 🛠 Built With <a name="built-with">Ruby</a>
 
@@ -96,11 +96,9 @@ After you're finished please remove all the comments and instructions!
 
 ### Key Features <a name="key-features"></a>
 
-> Describe between 1-3 key features of the application.
-
-- **[Add new students or teachers]**
-- **[Add new books]**
-- **[Save records of who borrowed a given book and when.]**
+- **Add new students or teachers**
+- **Add new books**
+- **Save records of who borrowed a given book and when.**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -108,9 +106,7 @@ After you're finished please remove all the comments and instructions!
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-> Add a link to your deployed project.
-
-- [Live Demo Link](https://yourdeployedapplicationlink.com)
+There is no live demo for this project.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -118,21 +114,13 @@ After you're finished please remove all the comments and instructions!
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-> Describe how a new developer could make use of your project.
-
 To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
 In order to run this project you need:
 
-<!--
-Example command:
-
-```sh
- gem install 
-```
- -->
+- Have Ruby installed.
 
 ### Setup
 
@@ -226,9 +214,7 @@ Feel free to check the [issues page](../../issues/).
 
 ## ⭐️ Show your support <a name="support"></a>
 
-> Write a message to encourage readers to support your project
-
-If you like this project...
+Please star this repository if you found the project useful.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -236,9 +222,6 @@ If you like this project...
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-> Give credit to everyone who inspired your codebase.
-
-I would like to thank...
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -246,7 +229,6 @@ I would like to thank...
 
 ## ❓ FAQ (OPTIONAL) <a name="faq"></a>
 
-> Add at least 2 questions new developers would ask when they decide to use your project.
 
 - **Which Design pattern is implemented**
 
@@ -254,7 +236,7 @@ I would like to thank...
 
 - **Inheritance or Composition ?**
 
-  - Composition
+  - Mainly Composition.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
