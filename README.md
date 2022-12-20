@@ -60,11 +60,10 @@ After you're finished please remove all the comments and instructions!
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [OOP School Library] <a name="about-project"></a>
+# 📖 OOP School Library <a name="about-project"></a>
 
-> This app alows you to keep track of all the records of books in a library and who borrows them.
 
-**[OOP School Library]** is a...
+**OOP School Library** is a app alows you to keep track of all the records of books in a library and who borrows them.
 
 ## 🛠 Built With <a name="built-with">Ruby</a>
 
