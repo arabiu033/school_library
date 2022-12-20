@@ -149,6 +149,16 @@ To run the project, execute the following command:
   require_relative(file path)
 ```
 
+Example using the Person Class
+``` ruby
+person = Person.new(22, 'maximilianus')
+  person.correct_name
+  capitalizedPerson = CapitalizeDecorator.new(person)
+  capitalizedPerson.correct_name
+  capitalizedTrimmedPerson = TrimmerDecorator.new(capitalizedPerson)
+  capitalizedTrimmedPerson.correct_name
+```
+
 <!-- ### Run tests
 
 To run tests, run the following command:
