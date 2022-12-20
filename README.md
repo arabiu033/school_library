@@ -157,16 +157,12 @@ Install this project with:
 
 To run the project, execute the following command:
 
-<!--
-Example command:
-
 ```sh
   irb
   require_relative(file path)
 ```
---->
 
-### Run tests
+<!-- ### Run tests
 
 To run tests, run the following command:
 
@@ -178,17 +174,17 @@ Example command:
 ```
 --->
 
-### Deployment
+<!-- ### Deployment
 
 You can deploy this project using:
 
 <!--
-Example:
+Example: -->
 
-```sh
+<!-- ```sh
 
 ```
- -->
+ --> 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -211,9 +207,9 @@ Example:
 
 > Describe 1 - 3 features you will add to the project.
 
-- [ ] **[new_feature_1]**
-- [ ] **[new_feature_2]**
-- [ ] **[new_feature_3]**
+- [ ] **[Create aggregate classes]**
+- [ ] **[Implement associations between all clases]**
+- [ ] **[Add a basic UI to support the design]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -253,13 +249,13 @@ I would like to thank...
 
 > Add at least 2 questions new developers would ask when they decide to use your project.
 
-- **[Question_1]**
+- **[Which Design pattern is implemented]**
 
-  - [Answer_1]
+  - [Decorator design pattern]
 
-- **[Question_2]**
+- **[Inheritance or Composition ?]**
 
-  - [Answer_2]
+  - [Composition]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
