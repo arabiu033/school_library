@@ -30,7 +30,7 @@ After you're finished please remove all the comments and instructions!
   <img src="murple_logo.png" alt="logo" width="140"  height="auto" />
   <br/>
 
-  <h3><b>OOP School Library</b></h3>
+  <h3><b>microverse readme template</b></h3>
 
 </div>
 
@@ -60,13 +60,13 @@ After you're finished please remove all the comments and instructions!
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [your_project_name] <a name="about-project"></a>
+# 📖 [OOP School Library] <a name="about-project"></a>
 
 > This app alows you to keep track of all the records of books in a library and who borrows them.
 
-**[your_project__name]** is a...
+**[OOP School Library]** is a...
 
-## 🛠 Built With <a name="built-with"></a>
+## 🛠 Built With <a name="built-with">Ruby</a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
