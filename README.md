@@ -206,9 +206,9 @@ Example: -->
 
 > Describe 1 - 3 features you will add to the project.
 
-- [ ] **[Create aggregate classes]**
-- [ ] **[Implement associations between all clases]**
-- [ ] **[Add a basic UI to support the design]**
+- [ ] **Create aggregate classes**
+- [ ] **Implement associations between all clases**
+- [ ] **Add a basic UI to support the design**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -248,13 +248,13 @@ I would like to thank...
 
 > Add at least 2 questions new developers would ask when they decide to use your project.
 
-- **[Which Design pattern is implemented]**
+- **Which Design pattern is implemented**
 
-  - [Decorator design pattern]
+  - Decorator design pattern
 
-- **[Inheritance or Composition ?]**
+- **Inheritance or Composition ?**
 
-  - [Composition]
+  - Composition
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
