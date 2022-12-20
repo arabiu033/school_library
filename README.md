@@ -149,6 +149,7 @@ To run the project, execute the following command:
 
 Example using the Person Class
 ``` ruby
+require_relative('./person')
 person = Person.new(22, 'maximilianus')
   person.correct_name
   capitalizedPerson = CapitalizeDecorator.new(person)
@@ -187,8 +188,6 @@ Example: -->
 
 ## 👥 Authors <a name="authors"></a>
 
-> Mention all of the collaborators of this project.
-
 👤 **Aminu Rabiu**
 
 - GitHub: [@arabiu033](https://github.com/arabiu033)
@@ -199,8 +198,6 @@ Example: -->
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
-
-> Describe 1 - 3 features you will add to the project.
 
 - [ ] **Create aggregate classes**
 - [ ] **Implement associations between all clases**
