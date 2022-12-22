@@ -29,15 +29,11 @@ class App
   end
 
   def list_books
-    @books.each do |e|
-      puts("Title: \"#{e.title}\", Author: #{e.author}")
-    end
+    @books.each { |e| puts("Title: \"#{e.title}\", Author: #{e.author}") }
   end
 
   def list_people
-    @persons.each do |e|
-      puts("[#{e.class}] Name: #{e.name}, ID: #{e.id}, Age: #{e.age}")
-    end
+    @persons.each { |e| puts("[#{e.class}] Name: #{e.name}, ID: #{e.id}, Age: #{e.age}") }
   end
 
   def create_person
@@ -60,20 +56,24 @@ class App
   end
 
   def create_rental
-    puts('Select a book from the following list by number')
-    info = []
-    @books.each_with_index do |e, i|
-      puts("#{i}) Title: \"#{e.title}\", Author: #{e.author}")
+    if @books.length != 0 && @persons.length != 0
+      puts('Select a book from the following list by number')
+      info = []
+      @books.each_with_index do |e, i|
+        puts("#{i}) Title: \"#{e.title}\", Author: #{e.author}")
+      end
+      info.push(gets.chomp)
+      @persons.each_with_index do |e, i|
+        puts("#{i}) [#{e.class}] Name: #{e.name}, ID: #{e.id}, Age: #{e.age}")
+      end
+      info.push(gets.chomp)
+      print('Date: ')
+      info.push(gets.chomp)
+      Rentals.new(@persons[info[1].to_i], @books[info[0].to_i], info[2])
+      puts('Rental created successfully')
+    else
+      puts('No books or persons available')
     end
-    info.push(gets.chomp)
-    @persons.each_with_index do |e, i|
-      puts("#{i}) [#{e.class}] Name: #{e.name}, ID: #{e.id}, Age: #{e.age}")
-    end
-    info.push(gets.chomp)
-    print('Date: ')
-    info.push(gets.chomp)
-    Rentals.new(@persons[info[1].to_i], @books[info[0].to_i], info[2])
-    puts('Rental created successfully')
   end
 
   def list_rental
