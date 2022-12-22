@@ -108,6 +108,11 @@ There is no live demo for this project.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## Image view:
+<div style="min-width:100%;display:flex;justify-content:space-around">
+  <img src="./demo.png" width="50%" height="700">
+</div>
+
 <!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
@@ -143,19 +148,7 @@ Install this project with:
 To run the project, execute the following command:
 
 ```sh
-  irb
-  require_relative(file path)
-```
-
-Example using the Person Class
-``` ruby
-require_relative('./person')
-person = Person.new(22, 'maximilianus')
-  person.correct_name
-  capitalizedPerson = CapitalizeDecorator.new(person)
-  capitalizedPerson.correct_name
-  capitalizedTrimmedPerson = TrimmerDecorator.new(capitalizedPerson)
-  capitalizedTrimmedPerson.correct_name
+  ./main.rb
 ```
 
 <!-- ### Run tests
