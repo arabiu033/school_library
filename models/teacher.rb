@@ -14,10 +14,10 @@ class Teacher < Person
 
   def to_hash
     {
-      :age => @age,
-      :name => @name,
-      :specialization => @specialization,
-      :class => self.class
+      age: @age,
+      name: @name,
+      specialization: @specialization,
+      class: self.class
     }
   end
 end

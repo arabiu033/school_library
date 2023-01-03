@@ -59,7 +59,7 @@ class App
   end
 
   def create_rental
-    if @books.length != 0 && @persons.length != 0
+    if !@books.empty? && !@persons.empty?
       puts('Select a book from the following list by number')
       info = []
       @books.each_with_index do |e, i|
@@ -142,31 +142,31 @@ class App
     @persons.each_with_index do |obj, i|
       @persons[i] = obj.to_hash
     end
-    File.open('./storage_files/persons.json', 'w') {|f| f.write JSON.generate(@persons)}
+    File.write('./storage_files/persons.json', JSON.generate(@persons))
 
     @books.each_with_index do |obj, i|
       @books[i] = obj.to_hash
     end
-    File.open('./storage_files/books.json', 'w') {|f| f.write JSON.generate(@books)}
+    File.write('./storage_files/books.json', JSON.generate(@books))
   end
 
   def read_from_files
-    if File.exists? './storage_files/persons.json'
-      @persons = JSON.load(File.read('./storage_files/persons.json'))
+    if File.exist? './storage_files/persons.json'
+      @persons = JSON.parse(File.read('./storage_files/persons.json'))
       @persons.each_with_index do |obj, i|
-        if obj['class'] == 'Teacher'
-          @persons[i] = Teacher.new(obj['specialization'], obj['age'], obj['name'])
-        else
-          @persons[i] = Student.new(obj['age'], obj['name'], obj['parent_permission'])
-        end
+        @persons[i] = if obj['class'] == 'Teacher'
+                        Teacher.new(obj['specialization'], obj['age'], obj['name'])
+                      else
+                        Student.new(obj['age'], obj['name'], obj['parent_permission'])
+                      end
       end
     end
 
-    if File.exists? './storage_files/books.json'
-      @books = JSON.load(File.read('./storage_files/books.json'))
-      @books.each_with_index do |obj, i|
-        @books[i] = Book.new(obj['title'], obj['author'])
-      end
+    return unless File.exist? './storage_files/books.json'
+
+    @books = JSON.parse(File.read('./storage_files/books.json'))
+    @books.each_with_index do |obj, i|
+      @books[i] = Book.new(obj['title'], obj['author'])
     end
   end
 end

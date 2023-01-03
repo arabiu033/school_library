@@ -22,10 +22,10 @@ class Student < Person
 
   def to_hash
     {
-      :age => @age,
-      :name => @name,
-      :parent_permission => @parent_permission,
-      :class => self.class
+      age: @age,
+      name: @name,
+      parent_permission: @parent_permission,
+      class: self.class
     }
   end
 end
