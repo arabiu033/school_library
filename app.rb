@@ -4,6 +4,7 @@ require_relative('./models/person')
 require_relative('./models/rentals')
 require_relative('./models/student')
 require_relative('./models/teacher')
+require('json')
 
 class App
   def initialize
@@ -15,8 +16,10 @@ class App
 
     @books = []
     @persons = []
+    @rentals = []
     @persons_id = []
     puts('Welcome to School Library!')
+    read_from_files
   end
 
   def run
@@ -69,7 +72,9 @@ class App
       info.push(gets.chomp)
       print('Date: ')
       info.push(gets.chomp)
-      Rentals.new(@persons[info[1].to_i], @books[info[0].to_i], info[2])
+      rental = Rentals.new(@persons[info[1].to_i], @books[info[0].to_i], info[2])
+      p rental
+      @rentals << rental
       puts('Rental created successfully')
     else
       puts('No books or persons available')
@@ -79,7 +84,7 @@ class App
   def list_rental
     print('ID of person: ')
     info = gets.chomp.to_i
-    puts('Rentals; ')
+    puts('Rentals: ')
     return if @persons_id.index(info).nil?
 
     @persons[@persons_id.index(info)].rentals.each do |e|
@@ -101,6 +106,7 @@ class App
   end
 
   def exit
+    save_to_files
     puts("Thank you for using this app!\n\n")
   end
 
@@ -130,5 +136,37 @@ class App
     @persons << person
     @persons_id << person.id
     puts('Teacher created successfully')
+  end
+
+  def save_to_files
+    @persons.each_with_index do |obj, i|
+      @persons[i] = obj.to_hash
+    end
+    File.open('./storage_files/persons.json', 'w') {|f| f.write JSON.generate(@persons)}
+
+    @books.each_with_index do |obj, i|
+      @books[i] = obj.to_hash
+    end
+    File.open('./storage_files/books.json', 'w') {|f| f.write JSON.generate(@books)}
+  end
+
+  def read_from_files
+    if File.exists? './storage_files/persons.json'
+      @persons = JSON.load(File.read('./storage_files/persons.json'))
+      @persons.each_with_index do |obj, i|
+        if obj['class'] == 'Teacher'
+          @persons[i] = Teacher.new(obj['specialization'], obj['age'], obj['name'])
+        else
+          @persons[i] = Student.new(obj['age'], obj['name'], obj['parent_permission'])
+        end
+      end
+    end
+
+    if File.exists? './storage_files/books.json'
+      @books = JSON.load(File.read('./storage_files/books.json'))
+      @books.each_with_index do |obj, i|
+        @books[i] = Book.new(obj['title'], obj['author'])
+      end
+    end
   end
 end
