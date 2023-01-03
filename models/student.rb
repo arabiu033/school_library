@@ -1,7 +1,6 @@
 #!/usr/bin/env ruby
 require_relative('./person')
 require_relative('./classroom')
-require('json')
 
 class Student < Person
   attr_reader :classroom

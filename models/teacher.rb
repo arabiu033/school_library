@@ -1,6 +1,5 @@
 #!/usr/bin/env ruby
 require_relative('./person')
-require('json')
 
 class Teacher < Person
   def initialize(specialization, age, name, parent_permission: true)
