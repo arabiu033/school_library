@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 require_relative('./person')
 require_relative('./classroom')
+require('json')
 
 class Student < Person
   attr_reader :classroom
@@ -17,5 +18,14 @@ class Student < Person
 
   def play_hooky
     '¯(ツ)/¯'
+  end
+
+  def to_hash
+    {
+      :age => @age,
+      :name => @name,
+      :parent_permission => @parent_permission,
+      :class => self.class
+    }
   end
 end
