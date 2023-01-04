@@ -19,4 +19,10 @@ class Teacher < Person
       class: self.class
     }
   end
+ 
+  def ==(other)
+    age == other.age &&
+      name == other.name &&
+      specialization == other.specialization
+  end
 end
