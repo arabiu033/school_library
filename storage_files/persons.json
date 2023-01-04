@@ -1,1 +1,1 @@
-[{"age":"22","name":"John","parent_permission":true,"class":"Student"},{"age":"34","name":"Bob","parent_permission":null,"class":"Student"},{"age":"12","name":"Chris","parent_permission":false,"class":"Student"},{"age":"14","name":"Bin","parent_permission":false,"class":"Student"}]
+[{"age":"22","name":"John","parent_permission":true,"class":"Student"},{"age":"32","name":"Chris","specialization":"Chemistry","class":"Teacher"},{"age":"12","name":"Bob","parent_permission":false,"class":"Student"},{"age":"Bane","name":"Bane","specialization":"Fight","class":"Teacher"}]
