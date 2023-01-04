@@ -27,4 +27,10 @@ class Student < Person
       class: self.class
     }
   end
+
+  def ==(other)
+    name == other.name &&
+      age == other.age
+  end
+
 end
