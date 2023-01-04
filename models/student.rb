@@ -32,5 +32,4 @@ class Student < Person
     name == other.name &&
       age == other.age
   end
-
 end
