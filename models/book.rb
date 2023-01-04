@@ -14,4 +14,16 @@ class Book
     @rentals.push(rental)
     rental.book = self
   end
+
+  def to_hash
+    {
+      title: @title,
+      author: @author
+    }
+  end
+
+  def ==(other)
+    title == other.title &&
+      author == other.author
+  end
 end

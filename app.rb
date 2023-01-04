@@ -4,18 +4,20 @@ require_relative('./models/person')
 require_relative('./models/rentals')
 require_relative('./models/student')
 require_relative('./models/teacher')
+require_relative('./models/storage')
 
 class App
   def initialize
     @func = { '1' => :list_books, '2' => :list_people, '3' => :create_person,
               '4' => :create_book, '5' => :create_rental, '6' => :list_rental,
               '7' => :exit }
-
     @person = { '1' => :create_student, '2' => :create_teacher }
-
-    @books = []
-    @persons = []
-    @persons_id = []
+    @books = Storage.read_books
+    obj = Storage.read_persons
+    @persons = obj[0]
+    @persons_id = obj[1]
+    @rentals = Storage.read_rentals
+    sync_rentals
     puts('Welcome to School Library!')
   end
 
@@ -56,7 +58,7 @@ class App
   end
 
   def create_rental
-    if @books.length != 0 && @persons.length != 0
+    if !@books.empty? && !@persons.empty?
       puts('Select a book from the following list by number')
       info = []
       @books.each_with_index do |e, i|
@@ -69,7 +71,8 @@ class App
       info.push(gets.chomp)
       print('Date: ')
       info.push(gets.chomp)
-      Rentals.new(@persons[info[1].to_i], @books[info[0].to_i], info[2])
+      rental = Rentals.new(@persons[info[1].to_i], @books[info[0].to_i], info[2])
+      @rentals << rental
       puts('Rental created successfully')
     else
       puts('No books or persons available')
@@ -79,7 +82,7 @@ class App
   def list_rental
     print('ID of person: ')
     info = gets.chomp.to_i
-    puts('Rentals; ')
+    puts('Rentals: ')
     return if @persons_id.index(info).nil?
 
     @persons[@persons_id.index(info)].rentals.each do |e|
@@ -101,6 +104,7 @@ class App
   end
 
   def exit
+    Storage.save_to_files(@persons, @books, @rentals)
     puts("Thank you for using this app!\n\n")
   end
 
@@ -130,5 +134,12 @@ class App
     @persons << person
     @persons_id << person.id
     puts('Teacher created successfully')
+  end
+
+  def sync_rentals
+    @rentals.each_with_index do |obj, i|
+      @rentals[i].person = @persons[@persons.index(obj.person)]
+      @rentals[i].book = @books[@books.index(obj.book)]
+    end
   end
 end
