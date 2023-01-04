@@ -61,7 +61,7 @@ class Storage
   end
 
   def self.return_person(obj)
-    return Teacher.new(obj['specialization'], obj['age'], obj['name']) if obj['clas'] == 'Teacher'
+    return Teacher.new(obj['specialization'], obj['age'], obj['name']) if obj['class'] == 'Teacher'
 
     Student.new(obj['age'], obj['name'], obj['parent_permission'])
   end
