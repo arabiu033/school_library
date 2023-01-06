@@ -19,6 +19,11 @@ class Student < Person
     '¯(ツ)/¯'
   end
 
+  def ==(other)
+    name == other.name &&
+      age == other.age
+  end
+
   def to_hash
     {
       age: @age,
@@ -26,10 +31,5 @@ class Student < Person
       parent_permission: @parent_permission,
       class: self.class
     }
-  end
-
-  def ==(other)
-    name == other.name &&
-      age == other.age
   end
 end
