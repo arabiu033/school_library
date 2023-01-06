@@ -2,7 +2,7 @@ require_relative '../teacher'
 
 describe Teacher do
   before(:each) do
-    @teacher = Teacher.new("Ruby", 50, 'Korra')
+    @teacher = Teacher.new('Ruby', 50, 'Korra')
   end
 
   it 'should phave access to teacher attributes' do

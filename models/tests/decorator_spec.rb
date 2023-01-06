@@ -2,7 +2,6 @@ require_relative '../decorator'
 require_relative '../person'
 
 describe Decorator do
-
   it 'should store a name passed' do
     dec = Decorator.new(Person.new(20, 'Korra'))
     expect(dec.correct_name).to eql 'Korra'

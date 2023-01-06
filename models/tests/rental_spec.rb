@@ -3,7 +3,6 @@ require_relative '../book'
 require_relative '../rentals'
 
 describe Rentals do
-
   it 'should accept and return attributes passed' do
     student = Student.new(21, 'Korra', true)
     book = Book.new('Dune', 'Korra')
