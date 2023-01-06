@@ -1,5 +1,5 @@
-require_relative '../decorator'
-require_relative '../person'
+require_relative '../models/decorator'
+require_relative '../models/person'
 
 describe Decorator do
   it 'should store a name passed' do

@@ -1,6 +1,6 @@
-require_relative '../student'
-require_relative '../book'
-require_relative '../rentals'
+require_relative '../models/student'
+require_relative '../models/book'
+require_relative '../models/rentals'
 
 describe Rentals do
   it 'should accept and return attributes passed' do

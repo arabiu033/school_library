@@ -1,4 +1,4 @@
-require_relative '../person'
+require_relative '../models/person'
 
 describe Person do
   before(:each) do
