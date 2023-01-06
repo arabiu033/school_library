@@ -32,5 +32,4 @@ class Student < Person
       class: self.class
     }
   end
-  
 end
