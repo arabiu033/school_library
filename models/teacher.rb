@@ -2,9 +2,8 @@
 require_relative('./person')
 
 class Teacher < Person
-
   attr_reader :specialization
-  
+
   def initialize(specialization, age, name, parent_permission: true)
     super(age, name, parent_permission: parent_permission)
     @specialization = specialization
@@ -21,5 +20,11 @@ class Teacher < Person
       specialization: @specialization,
       class: self.class
     }
+  end
+
+  def ==(other)
+    age == other.age &&
+      name == other.name &&
+      specialization == other.specialization
   end
 end

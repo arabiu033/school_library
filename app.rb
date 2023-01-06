@@ -72,7 +72,6 @@ class App
       print('Date: ')
       info.push(gets.chomp)
       rental = Rentals.new(@persons[info[1].to_i], @books[info[0].to_i], info[2])
-      p rental.to_hash
       @rentals << rental
       puts('Rental created successfully')
     else

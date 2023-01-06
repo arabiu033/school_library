@@ -21,4 +21,9 @@ class Book
       author: @author
     }
   end
+
+  def ==(other)
+    title == other.title &&
+      author == other.author
+  end
 end
